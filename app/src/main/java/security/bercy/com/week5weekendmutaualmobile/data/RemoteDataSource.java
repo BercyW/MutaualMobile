@@ -21,10 +21,10 @@ public class RemoteDataSource {
     public static final String APP_ID="4e364f74";
     public static final String APP_KEY="1cae91ccb431532e2f7d8cb5c7f6bfbc";
     Context context;
-    private String BASE_URL;
+    public static final String BASE_URL = "https://api.edamam.com/";
 
     public RemoteDataSource(String BASE_URL, Context context) {
-        this.BASE_URL = BASE_URL;
+       // this.BASE_URL = BASE_URL;
         this.context = context;
     }
 

@@ -6,4 +6,5 @@ package security.bercy.com.week5weekendmutaualmobile.di.component;
 
 public class AppComponent {
 
+
 }

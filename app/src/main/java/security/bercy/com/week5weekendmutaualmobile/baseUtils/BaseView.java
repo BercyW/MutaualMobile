@@ -5,5 +5,5 @@ package security.bercy.com.week5weekendmutaualmobile.baseUtils;
  */
 
 public interface BaseView {
-    void showErro(String error);
+    void showError(String error);
 }

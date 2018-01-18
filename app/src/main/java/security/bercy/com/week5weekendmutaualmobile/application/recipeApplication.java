@@ -7,12 +7,15 @@ import android.app.Application;
  */
 
 public class recipeApplication extends Application {
-    public static final String BASE_URL = "https://api.edamam.com/";
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-
-
-    }
+//    public static final String BASE_URL = "https://api.edamam.com/";
+//
+//    @Override
+//    public void onCreate() {
+//        super.onCreate();
+//
+//        AppModule appModule = new AppModule(BASE_URL, getApplicationContext());
+//        appComponent = DaggerAppComponent.builder()
+//                .appModule(appModule)
+//                .build();
+//    }
 }

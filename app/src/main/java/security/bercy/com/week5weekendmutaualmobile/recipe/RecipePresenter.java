@@ -65,7 +65,7 @@ public class RecipePresenter implements RecipeContract.Presenter {
 
             @Override
             public void onError(Throwable e) {
-                view.showErro(e.getMessage());
+                view.showError(e.getMessage());
             }
 
             @Override
