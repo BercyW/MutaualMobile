@@ -5,6 +5,8 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -30,6 +32,8 @@ public class RecipePresenter implements RecipeContract.Presenter {
     RecipeContract.View view;
 
     List<Recipe> recipeList = new ArrayList<>();
+
+    @Inject
     public RecipePresenter(RemoteDataSource remoteDataSource){
         this.remoteDataSource = remoteDataSource;
     }
