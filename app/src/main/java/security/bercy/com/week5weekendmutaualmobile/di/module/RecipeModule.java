@@ -14,8 +14,8 @@ import security.bercy.com.week5weekendmutaualmobile.recipe.RecipePresenter;
 public class RecipeModule {
 
 
-    @Provides
     @ActivityScope
+    @Provides
     RecipePresenter provideRecipePresenter(RemoteDataSource remoteDataSource){
         return new RecipePresenter(remoteDataSource);
     }

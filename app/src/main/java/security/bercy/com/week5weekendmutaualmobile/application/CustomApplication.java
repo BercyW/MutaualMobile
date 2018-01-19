@@ -2,6 +2,7 @@ package security.bercy.com.week5weekendmutaualmobile.application;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 import security.bercy.com.week5weekendmutaualmobile.di.component.AppComponent;
 import security.bercy.com.week5weekendmutaualmobile.di.component.DaggerAppComponent;
@@ -15,7 +16,7 @@ import security.bercy.com.week5weekendmutaualmobile.di.module.RecipeModule;
 
 public class CustomApplication extends Application {
     public static final String BASE_URL = "https://api.edamam.com/";
-    AppComponent appComponent;
+    private AppComponent appComponent;
     private RecipeComponent recipeComponent;
 
     @Override
@@ -25,7 +26,7 @@ public class CustomApplication extends Application {
 
 
 
-        AppModule appModule = new AppModule(BASE_URL, getApplicationContext());
+       AppModule appModule = new AppModule(BASE_URL, getApplicationContext());
        appComponent = DaggerAppComponent.builder()
                 .appModule(appModule)
                 .build();
@@ -33,6 +34,7 @@ public class CustomApplication extends Application {
 
 
     public static CustomApplication get(Context context){
+
         return (CustomApplication) context.getApplicationContext();
     }
 

@@ -1,6 +1,7 @@
 package security.bercy.com.week5weekendmutaualmobile.di.module;
 
 import android.content.Context;
+import android.util.Log;
 
 import dagger.Module;
 import dagger.Provides;
@@ -20,6 +21,7 @@ public class AppModule {
     public AppModule(String BASE_URL,Context context){
         this.BASE_URL = BASE_URL;
         this.context = context;
+
     }
 
     //pass the dependencies to sub-components
@@ -27,11 +29,14 @@ public class AppModule {
     @AppScope
     @Provides
     RemoteDataSource provideRemoteDataSource(){
+
         return new RemoteDataSource(BASE_URL,context);
     }
     @AppScope
     @Provides
     Context provideContext(){
+
         return this.context;
+
     }
 }

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,11 +17,11 @@ import security.bercy.com.week5weekendmutaualmobile.application.CustomApplicatio
 import security.bercy.com.week5weekendmutaualmobile.data.RemoteDataSource;
 import security.bercy.com.week5weekendmutaualmobile.model.Recipe;
 
-public class RecipeActivity extends AppCompatActivity implements RecipeContract.View{
+public class RecipeActivity extends AppCompatActivity implements RecipeContract.View,RecipeAdapter.RecipeListItemListener{
     @Inject
     RecipePresenter recipePresenter;
-    List<Recipe> recipeList = new ArrayList<>();
-    RecipeAdapter adapter;
+    private List<Recipe> recipeList = new ArrayList<>();
+    private RecipeAdapter adapter;
     private RecyclerView recyclerView;
 
     @Override
@@ -30,22 +31,28 @@ public class RecipeActivity extends AppCompatActivity implements RecipeContract.
 
 
         //setup component
+        setupComponent();
+        recipePresenter.attachView(this);
+        recyclerSetup();
+        recipePresenter.getRecipes(0, "rice");
+    }
+
+    private void setupComponent() {
+        Log.d("2222", "setupComponent: "+this);
         CustomApplication.get(this).getRecipeComponent().inject(this);
+    }
 
+    private void recyclerSetup() {
 
-
-
-
-
-        recipePresenter.getRecipes(0,"rice");
         recyclerView = findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 3);
         recyclerView.setLayoutManager(layoutManager);
 
+
         adapter = new RecipeAdapter(this, recipeList);
 
-        recyclerView.setAdapter(adapter);
 
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -67,6 +74,11 @@ public class RecipeActivity extends AppCompatActivity implements RecipeContract.
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+
+    @Override
+    public void onItemClicked(Recipe recipe) {
 
     }
 }

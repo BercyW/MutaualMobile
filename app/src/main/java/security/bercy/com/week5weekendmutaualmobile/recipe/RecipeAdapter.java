@@ -29,7 +29,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         this.listener = (RecipeListItemListener) context;
         this.recipeList = recipeList;
 
-
     }
 
     @Override

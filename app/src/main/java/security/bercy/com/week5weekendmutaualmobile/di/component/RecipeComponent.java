@@ -12,8 +12,5 @@ import security.bercy.com.week5weekendmutaualmobile.recipe.RecipeActivity;
 @ActivityScope
 @Subcomponent(modules = RecipeModule.class)
 public interface RecipeComponent {
-
     void inject(RecipeActivity activity);
-
-
 }

@@ -8,9 +8,8 @@ import javax.inject.Scope;
 /**
  * Created by Bercy on 1/18/18.
  */
-
-
 @Scope
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ActivityScope {
+
 }

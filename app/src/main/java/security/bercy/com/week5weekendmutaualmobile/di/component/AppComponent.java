@@ -12,7 +12,5 @@ import security.bercy.com.week5weekendmutaualmobile.di.scope.AppScope;
 @AppScope
 @Component(modules= AppModule.class)
 public interface AppComponent {
-
     RecipeComponent plus(RecipeModule recipeModule);
-
 }

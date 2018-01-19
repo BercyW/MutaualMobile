@@ -52,7 +52,7 @@ public class RecipePresenter implements RecipeContract.Presenter {
     public void getRecipes(int fromNum, String query) {
 
         String from = String.valueOf(fromNum);
-        String to = String.valueOf(fromNum+30);
+        String to = String.valueOf(fromNum+100);
         Observer<Recipe> observer = new Observer<Recipe>() {
 
 
@@ -69,7 +69,7 @@ public class RecipePresenter implements RecipeContract.Presenter {
 
             @Override
             public void onError(Throwable e) {
-                view.showError(e.getMessage());
+//                view.showError(e.getMessage());
             }
 
             @Override
